@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>comments index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <style>
+    html{
+      background-color: #0278AE;
+    }
+  </style>
+  <body>
+<div class="container">
+<div class="box columns is-mobile is-centered" style="padding: 30px; margin-top: 50px; width: 1000px; ">
+  <div class="column is-half is-offset-one-quarter">
+<h1 style="font-size: 2rem;"><b>Comments</b></h1>
+<hr>
+<ul>
+  <%for(let c of comments){%>
+<li style="font-size: 1.2rem;" ><%=c.comment%>-<b><%=c.username %></b><a class="button is-info"href="/comments/<%=c.id%>"> details</a></li>
+  <%}%>
+
+</ul>
+<a class="button is-primary"href="/comments/new">New comment</a>
+   </div>
+</div>
+
+
+</div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>show</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <style>
+    html{
+      background-color: #0278AE;
+    }
+  </style>
+  <body>
+
+    <div class="container">
+      <div class="box columns is-mobile is-centered" style="padding: 30px; margin-top: 50px; width: 1000px; ">
+        <div class="column is-half is-offset-one-quarter">
+
+    <h1 style="font-size: 0.9rem;"  > Comment id: <%= comment.id%></h1>
+    <h2 style="font-size: 1.2rem;" ><%= comment.comment %> - <%=comment.username %></h2>
+    <a class="button is-primary"href="/comments">Back to index</a>
+    <a class="button is-info"href="/comments/<%= comment.id%>/edit">Edit Comment</a>
+    <form method="post"  action="/comments/<%=comment.id%>/?_method=DELETE"><br>
+      <button class="button is-danger" >Delete</button>
+    </form>
+
+  </div>
+</div>
+
+
+</div>    
+  </body>
+</html>
