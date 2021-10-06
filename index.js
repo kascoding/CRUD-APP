@@ -3,7 +3,7 @@ const app=express();
 const path=require('path');
 const methodOverride=require('method-override')
 const {v4:uuid}=require('uuid');
-
+const port =process.env.PORT||5000;
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -11,7 +11,7 @@ app.use(methodOverride('_method'))
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs')
 
-const comments=[
+let comments=[
    {
 
      id: uuid(),
@@ -40,7 +40,7 @@ const comments=[
 ]
 
 
-app.get('/comments',(req,res)=>{
+app.get('/',(req,res)=>{
    res.render('comments/index',{comments})
 
 })
@@ -112,6 +112,6 @@ app.post('/tacos',(req,res)=>{
   res.send(`ok,here are your ${qty} ${meat} tacos`)
 })
 
-app.listen(3000,()=>{
-  console.log("ON THE PORT 3000!")
+app.listen(port,()=>{
+  console.log("ON THE PORT 5000!")
 })

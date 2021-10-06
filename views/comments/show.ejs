@@ -18,8 +18,8 @@
 
     <h1 style="font-size: 0.9rem;"  > Comment id: <%= comment.id%></h1>
     <h2 style="font-size: 1.2rem;" ><%= comment.comment %> - <%=comment.username %></h2>
-    <a class="button is-primary"href="/comments">Back to index</a>
-    <a class="button is-info"href="/comments/<%= comment.id%>/edit">Edit Comment</a>
+    <a class="button is-primary" href="/">Back to index</a>
+    <a class="button is-info" href="/comments/<%= comment.id%>/edit">Edit Comment</a>
     <form method="post"  action="/comments/<%=comment.id%>/?_method=DELETE"><br>
       <button class="button is-danger" >Delete</button>
     </form>
